@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Diff Two Arrays" />
+  <meta
+    name="keywords"
+    content="Algorithms, Free Code Camp, JavaScript, Diff Two Arrays"
+  />
+  <meta name="author" content="Donald Brown" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+      integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+      crossorigin="anonymous"
+    />
+  <title>Diff Two Arrays</title>
+</head>
+<body>
+  <h1>Diff Two Arrays</h1>
+  <p>Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.</p>
+  <p><strong>Note</strong><br>
+    You can return the array with its elements in any order.</p>
+  <pre><code class="lang-js">
+function diffArray(arr1, arr2) {
+  return [
+    ...arr1.filter((e) => !arr2.includes(e)),
+    ...arr2.filter((e) => !arr1.includes(e)),
+  ];
+}
+
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+console.log(
+  diffArray(
+    ["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"],
+    ["diorite", "andesite", "grass", "dirt", "dead shrub"]
+  )
+);
+console.log(diffArray(["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]));
+
+function diffTwoArray(arr1, arr2) {
+  const newArr = new Set([...arr1, ...arr2]);
+
+    // Loop through newArr
+    const diffArr = [];
+    for(const current of newArr){
+      if(arr1.includes(current) && !arr2.includes(current)){
+        diffArr.push(current);
+      }else if(arr2.includes(current) && !arr1.includes(current)){
+        diffArr.push(current);
+      }
+    }
+    return diffArr;
+}
+
+console.log(diffTwoArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+console.log(
+  diffTwoArray(
+    ["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"],
+    ["diorite", "andesite", "grass", "dirt", "dead shrub"]
+  )
+);
+    
+  </code></pre>
+  
+  <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+      integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+</body>
+</html>

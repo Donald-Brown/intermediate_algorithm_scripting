@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Sum All Numbers In a Range" />
+    <meta
+      name="keywords"
+      content="Algorithms, Free Code Camp, JavaScript, Sum All Numbers in a Range"
+    />
+    <meta name="author" content="Donald Brown" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+      integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+      crossorigin="anonymous"
+    />
+    <title>Sum All Numbers in a Range</title>
+  </head>
+  <body>
+    <h1>Sum All Numbers in a Range</h1>
+    <p>
+      We'll pass you an array of two numbers. Return the sum of those two
+      numbers plus the sum of all the numbers between them. The lowest number
+      will not always come first.
+    </p>
+    <p>
+      For example, sumAll&#40;&#91;4,1&#93;&#41; should return 10 because sum of
+      all the numbers between 1 and 4 &#40;both inclusive&#41; is 10.
+    </p>
+    <p>Open the console to see app results.</p>
+    <pre><code class="lang-js">
+function sumAll(arr) {
+  let result = 0;
+  for(let i = Math.min(...arr); i <= Math.max(...arr); i++){
+    result += i;
+  }
+  return result;
+}
+
+console.log(sumAll([1, 4])); // returns 10
+    </code></pre>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+      integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
