@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Seek and Destroy" />
+  <meta
+    name="keywords"
+    content="Algorithms, Free Code Camp, JavaScript, Seek and Destroy"
+  />
+  <meta name="author" content="Donald Brown" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+    integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+    crossorigin="anonymous"
+  />
+  <title>Seek and Destroy</title>
+</head>
+<body>
+  <h1>Seek and Destroy</h1>
+  <p>
+    You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+  </p>
+  <p>
+    <strong>Note</strong><br><br>
+    You have to use the arguments object.
+  </p>
+  <pre><code class="lang-js">
+function destroyer(arr) {
+  let destroyers = [...arguments].slice(1);
+  let array = [...arguments[0]];
+  newArr = array.filter(e => !destroyers.includes(e));
+  return newArr;
+}
+
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3)); // returns [1,1];
+console.log(destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan")); // returns [12, 92, 65]
+console.log(destroyer(["tree", "hamburger", 53], "tree", 53)); // returns  ['hamburger']
+console.log(destroyer([3, 5, 1, 2, 2], 2, 3, 5)); // returns [1]
+console.log(destroyer([2, 3, 2, 3], 2, 3)); // returns []
+  </code></pre>
+  
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+    integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+    crossorigin="anonymous"
+  ></script>
+  <script src="app.js"></script>
+</body>
+</html>
