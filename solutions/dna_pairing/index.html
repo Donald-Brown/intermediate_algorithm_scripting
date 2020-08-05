@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="DNA Pairing" />
+    <meta
+      name="keywords"
+      content="Algorithms, Free Code Camp, JavaScript, DNA Pairing"
+    />
+    <meta name="author" content="Donald Brown" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+      integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+      crossorigin="anonymous"
+    />
+    <title>DNA Pairing</title>
+  </head>
+  <body>
+    <h1>DNA Pairing</h1>
+    <p>
+      The DNA strand is missing the pairing element. Take each character, get
+      its pair, and return the results as a 2d array.
+    </p>
+    <p>
+      Base pairs are a pair of AT and CG. Match the missing element to the
+      provided character.
+    </p>
+    <p>Return the provided character as the first element in each array.</p>
+    <p>For example, for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]]</p>
+    <p>The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.</p>
+
+    <pre><code class="lang-js">
+  function pairElement(str) {
+    let strArr = str.split('');
+    let returnArray = [];
+    for(let current of strArr){
+      switch(current){
+        case "C":
+          returnArray.push(["C", "G"]);
+          break;
+        case "G":
+          returnArray.push(["G", "C"]);
+          break;
+        case "A":
+          returnArray.push(["A", "T"]);
+          break;
+        case "T":
+          returnArray.push(["T", "A"]);
+          break;
+  
+      }
+    }
+    return returnArray;
+  }
+
+      // pairElement("ATCGA") should return [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]].
+      // pairElement("TTGAG") should return [["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]].
+      // pairElement("CTCTA") should return [["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]].
+    </code></pre>
+
+    <div class="back">
+      <a href="../../index.html"><strong>Back</strong></a>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+      integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>

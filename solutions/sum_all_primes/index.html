@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Sum All Numbers In a Range" />
+    <meta name="description" content="Sum All Primes" />
     <meta
       name="keywords"
-      content="Algorithms, Free Code Camp, JavaScript, Sum All Numbers in a Range"
+      content="Algorithms, Free Code Camp, JavaScript, Sum Primes"
     />
     <meta name="author" content="Donald Brown" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,31 +15,28 @@
       integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
       crossorigin="anonymous"
     />
-    <title>Sum All Numbers in a Range</title>
+    <title>Sum All Primes</title>
   </head>
   <body>
-    <h1>Sum All Numbers in a Range</h1>
+    <h1>Sum All Primes</h1>
     <p>
-      We'll pass you an array of two numbers. Return the sum of those two
-      numbers plus the sum of all the numbers between them. The lowest number
-      will not always come first.
+      A prime number is a whole number greater than 1 with exactly two divisors:
+      1 and itself. For example, 2 is a prime number because it is only
+      divisible by 1 and 2. In contrast, 4 is not prime since it is divisible by
+      1, 2 and 4.
     </p>
     <p>
-      For example, sumAll&#40;&#91;4,1&#93;&#41; should return 10 because sum of
-      all the numbers between 1 and 4 &#40;both inclusive&#41; is 10.
+      Rewrite sumPrimes so it returns the sum of all prime numbers that are less
+      than or equal to num.
     </p>
-    <p>Open the console to see app results.</p>
-    <pre><code class="lang-js">
-function sumAll(arr) {
-  let result = 0;
-  for(let i = Math.min(...arr); i <= Math.max(...arr); i++){
-    result += i;
-  }
-  return result;
-}
 
-console.log(sumAll([1, 4])); // returns 10
+    <pre><code class="lang-js">
+
+    // sumPrimes(10) should return a number.
+    // sumPrimes(10) should return 17.
+    // sumPrimes(977) should return 73156.
     </code></pre>
+
     <div class="back">
       <a href="../../index.html"><strong>Back</strong></a>
     </div>

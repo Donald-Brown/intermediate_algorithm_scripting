@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Wherefore Art Thou" />
+    <meta
+      name="keywords"
+      content="Algorithms, Free Code Camp, JavaScript, Wherefore Art Thou"
+    />
+    <meta name="author" content="Donald Brown" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+      integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+      crossorigin="anonymous"
+    />
+    <title>Wherefore Art Thou</title>
+  </head>
+  <body>
+    <h1>Wherefore Art Thou</h1>
+    <p>
+      Make a function that looks through an array of objects &#40;first
+      argument&#41; and returns an array of all objects that have matching name
+      and value pairs &#40;second argument&#41;. Each name and value pair of the
+      source object has to be present in the object from the collection if it is
+      to be included in the returned array.
+    </p>
+    <br />
+    <p>
+      For example, if the first argument is &#91;&#123; first: "Romeo", last:
+      "Montague" &#125;, { first: "Mercutio", last: null }, { first: "Tybalt",
+      last: "Capulet" }&#93;, and the second argument is { last: "Capulet" },
+      then you must return the third object from the array (the first argument),
+      because it contains the name and its value, that was passed on as the
+      second argument.
+    </p>
+
+    <pre><code class="lang-js">
+      function whatIsInAName(collection, source) {
+        let arr = [];
+        let keys = Object.keys(source);
+      
+        for(let object of collection){
+          let objectKeys = Object.keys(object);
+          let truth = true;
+          for(let key of keys){
+            if(object[key] !== source[key]){
+              truth = false;
+            }  
+          }
+          if(truth){
+            arr.push(object);
+          }
+        }
+      
+        return arr;
+      }
+
+    //whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }) should return [{ first: "Tybalt", last: "Capulet" }].
+    //whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "apple": 1 }) should return [{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }].
+    //whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }) should return [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }].
+    //whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 }) should return [{ "apple": 1, "bat": 2, "cookie": 2 }].
+    //whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 }) should return [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }].
+    //whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3}) should return []
+
+  </code></pre>
+
+    <div class="back">
+      <a href="../../index.html"><strong>Back</strong></a>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+      integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>

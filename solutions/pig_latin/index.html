@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Pig Latin" />
+    <meta
+      name="keywords"
+      content="Algorithms, Free Code Camp, JavaScript, Pig Latin"
+    />
+    <meta name="author" content="Donald Brown" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+      integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+      crossorigin="anonymous"
+    />
+    <title>Pig Latin</title>
+  </head>
+  <body>
+    <h1>Pig Latin</h1>
+    <p>
+      - If a word begins with a consonant, take the first consonant or consonant
+      cluster, move it to the end of the word, and add "ay" to it.
+    </p>
+    <p>
+      - If a word begins with a vowel, just add "way" at the end.
+    </p>
+    <hr />
+    <p>
+      Translate the provided string to Pig Latin. Input strings are guaranteed
+      to be English words in all lowercase.
+    </p>
+
+    <pre><code class="lang-js">
+  function translatePigLatin(str) {
+    // Array of vowels
+    let vowels = ["a", "e", "i", "o", "u"];
+    if (vowels.includes(str.charAt(0))) {
+      return str + "way";
+    } else {
+      // handles cases where word begins with a consonant
+      return str.replace(/([b,c,d,e,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,y,z]+)([a,e,i,o,u][a-z]+)/, "$2$1") + "ay";
+    }
+  }
+
+    //translatePigLatin("california") should return "aliforniacay".
+    //translatePigLatin("paragraphs") should return "aragraphspay".
+    //translatePigLatin("glove") should return "oveglay".
+    //translatePigLatin("algorithm") should return "algorithmway".
+    //translatePigLatin("eight") should return "eightway".
+    //Should handle words where the first vowel comes in the middle of the word. translatePigLatin("schwartz") should return "artzschway".
+    //Should handle words without vowels. translatePigLatin("rhythm") should return "rhythmay".
+
+  </code></pre>
+
+    <div class="back">
+      <a href="../../index.html"><strong>Back</strong></a>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+      integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>

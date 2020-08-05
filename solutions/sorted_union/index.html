@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Sorted Union" />
+    <meta
+      name="keywords"
+      content="Algorithms, Free Code Camp, JavaScript, Sorted Union"
+    />
+    <meta name="author" content="Donald Brown" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+      integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorted Union</title>
+  </head>
+  <body>
+    <h1>Sorted Union</h1>
+    <p>
+      Write a function that takes two or more arrays and returns a new array of
+      unique values in the order of the original provided arrays.
+    </p>
+    <p>
+      In other words, all values present from all arrays should be included in
+      their original order, but with no duplicates in the final array.
+    </p>
+    <p>
+      The unique numbers should be sorted by their original order, but the final
+      array should not be sorted in numerical order.
+    </p>
+    <p>Check the assertion tests for examples.</p>
+
+    <pre><code class="lang-js">
+  function uniteUnique(arr) {
+    let argsArray = [...arguments];
+    let newArray = [];
+    for(let i = 0; i < argsArray.length; i++){
+      for(let j = 0; j < argsArray[i].length; j++){
+        if(!newArray.includes(argsArray[i][j])){
+          newArray.push(argsArray[i][j]);
+        }
+      }
+    }
+    return newArray;
+  }
+
+    // uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) should return [1, 3, 2, 5, 4].
+    // uniteUnique([1, 2, 3], [5, 2, 1]) should return [1, 2, 3, 5].
+    // uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]) should return [1, 2, 3, 5, 4, 6, 7, 8].
+
+  </code></pre>
+
+    <div class="back">
+      <a href="../../index.html"><strong>Back</strong></a>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+      integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>

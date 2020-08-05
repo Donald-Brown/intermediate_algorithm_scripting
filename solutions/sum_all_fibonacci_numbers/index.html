@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Sum All Fibonacci Numbers" />
+    <meta
+      name="keywords"
+      content="Algorithms, Free Code Camp, JavaScript, Sum All Fibonacci Numbers"
+    />
+    <meta name="author" content="Donald Brown" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+      integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+      crossorigin="anonymous"
+    />
+    <title>Sum All Fibonnaci Numbers</title>
+  </head>
+  <body>
+  <h1>Sum All Fibonacci Numbers</h1>
+  <p>
+    Given a positive integer num, return the sum of all odd Fibonacci numbers
+    that are less than or equal to num.
+  </p>
+  <p>
+    The first two numbers in the Fibonacci sequence are 1 and 1. Every
+    additional number in the sequence is the sum of the two previous numbers.
+    The first six numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8.
+  </p>
+  <p>
+    For example, sumFibs(10) should return 10 because all odd Fibonacci numbers
+    less than or equal to 10 are 1, 1, 3, and 5.
+  </p>
+
+  <pre><code class="lang-js">
+function sumFibs(num) {
+  let newNum = 0;
+  let numArr = [1, 1];
+  let index = 0;
+  while (newNum <= num) {
+    newNum = numArr[index] + numArr[index + 1];
+    numArr.push(newNum);
+    index++;
+  }
+  numArr.splice(-1, 1);
+  return numArr.filter(num => num%2 != 0).reduce((a,b) => a + b);
+  
+}
+
+    //sumFibs(1) should return a number. 
+    // sumFibs(1000) should return 1785.
+    // sumFibs(4000000) should return 4613732.
+    // sumFibs(4) should return 5.
+    // sumFibs(75024) should return 60696.
+    //sumFibs(75025) should return 135721.
+  </code></pre>
+
+
+    <div class="back">
+      <a href="../../index.html"><strong>Back</strong></a>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+      integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>

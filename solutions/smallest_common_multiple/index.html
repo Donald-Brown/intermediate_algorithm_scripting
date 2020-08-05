@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Sum All Numbers In a Range" />
+    <meta name="description" content="Smallest Common Multiple" />
     <meta
       name="keywords"
-      content="Algorithms, Free Code Camp, JavaScript, Sum All Numbers in a Range"
+      content="Algorithms, Free Code Camp, JavaScript, Smallest Common Multiple"
     />
     <meta name="author" content="Donald Brown" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,31 +15,36 @@
       integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
       crossorigin="anonymous"
     />
-    <title>Sum All Numbers in a Range</title>
+    <title>Smallest Common Multiple</title>
   </head>
   <body>
-    <h1>Sum All Numbers in a Range</h1>
+    <h1>Smallest Common Multiple</h1>
     <p>
-      We'll pass you an array of two numbers. Return the sum of those two
-      numbers plus the sum of all the numbers between them. The lowest number
-      will not always come first.
+      Find the smallest common multiple of the provided parameters that can be
+      evenly divided by both, as well as by all sequential numbers in the range
+      between these parameters.
     </p>
     <p>
-      For example, sumAll&#40;&#91;4,1&#93;&#41; should return 10 because sum of
-      all the numbers between 1 and 4 &#40;both inclusive&#41; is 10.
+      The range will be an array of two numbers that will not necessarily be in
+      numerical order.
     </p>
-    <p>Open the console to see app results.</p>
-    <pre><code class="lang-js">
-function sumAll(arr) {
-  let result = 0;
-  for(let i = Math.min(...arr); i <= Math.max(...arr); i++){
-    result += i;
-  }
-  return result;
-}
+    <p>
+      For example, if given 1 and 3, find the smallest common multiple of both 1
+      and 3 that is also evenly divisible by all numbers between 1 and 3. The
+      answer here would be 6.
+    </p>
 
-console.log(sumAll([1, 4])); // returns 10
-    </code></pre>
+    <pre><code class="lang-js">
+      
+
+    // smallestCommons([1, 5]) should return a number.
+    // smallestCommons([1, 5]) should return 60.
+    // smallestCommons([5, 1]) should return 60.
+    // smallestCommons([2, 10]) should return 2520.
+    // smallestCommons([1, 13]) should return 360360.
+    // smallestCommons([23, 18]) should return 6056820.
+  </code></pre>
+
     <div class="back">
       <a href="../../index.html"><strong>Back</strong></a>
     </div>

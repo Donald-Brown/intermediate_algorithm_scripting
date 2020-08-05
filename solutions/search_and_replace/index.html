@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Search and Replace" />
+    <meta
+      name="keywords"
+      content="Algorithms, Free Code Camp, JavaScript, Search and Replace"
+    />
+    <meta name="author" content="Donald Brown" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+      integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+      crossorigin="anonymous"
+    />
+    <title>Search and Replace</title>
+  </head>
+  <body>
+    <h1>Search and Replace</h1>
+    <p>
+      Perform a search and replace on the sentence using the arguments provided
+      and return the new sentence.
+    </p>
+    <p>First argument is the sentence to perform the search and replace on.</p>
+    <p>Second argument is the word that you will be replacing (before).</p>
+    <p>
+      Third argument is what you will be replacing the second argument with
+      (after).
+    </p>
+    <p>
+      <strong>Note</strong><br />
+      Preserve the case of the first character in the original word when you are
+      replacing it. For example if you mean to replace the word "Book" with the
+      word "dog", it should be replaced as "Dog"
+    </p>
+
+    <pre><code class="lang-js">
+  function myReplace(str, before, after) {
+    let index = str.indexOf(before);
+    if(str.charCodeAt(index) <= 90){
+      after = after.charAt(0).toUpperCase() + after.slice(1);
+    }
+    return str.replace(before, after);
+  }
+
+      //myReplace("Let us go to the store", "store", "mall") should return "Let us go to the mall".
+      //myReplace("He is Sleeping on the couch", "Sleeping", "sitting") should return "He is Sitting on the couch".
+      //myReplace("This has a spellngi error", "spellngi", "spelling") should return "This has a spelling error".
+      //myReplace("His name is Tom", "Tom", "john") should return "His name is John".
+      //myReplace("Let us get back to more Coding", "Coding", "algorithms") should return "Let us get back to more Algorithms".
+    </code></pre>
+
+    <div class="back">
+      <a href="../../index.html"><strong>Back</strong></a>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+      integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
