@@ -21,6 +21,8 @@ function smallestCommons(arr) {
 console.log(smallestCommons([1,5]));
 console.log(smallestCommons([23, 18]));
 
+
+
 // smallestCommons([1, 5]) should return a number.
 // smallestCommons([1, 5]) should return 60.
 // smallestCommons([5, 1]) should return 60.
